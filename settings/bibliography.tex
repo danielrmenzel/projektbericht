@@ -1,0 +1,25 @@
+\usepackage[
+    backend=biber,
+    style=ieee,        % Sets bibliography and citation style to IEEE
+    maxnames=3,        % Maximum number of authors before "et al." is used, typically more than 1 for IEEE
+    isbn=false,        % Typically ISBN is not included in IEEE papers
+    doi=true,          % Display DOI as it's common in IEEE citations
+    url=true,          % Display URLs as they can be important in IEEE citations
+    eprint=false       % Eprints are usually not included in IEEE
+]{biblatex}
+
+% Set distance between bibliographical references
+\setlength{\bibitemsep}{.5em}
+
+% Set indentation for each bibliographic entry
+\setlength{\bibhang}{2em}
+
+% Format URLs in the bibliography to be within angle brackets
+\DeclareFieldFormat{url}{<\url{#1}>}
+
+% Set penalties for breaking URLs to prevent overfull boxes
+\setcounter{biburllcpenalty}{7000}
+\setcounter{biburlucpenalty}{8000}
+
+% Source of the bibliography file
+\addbibresource{sources/literature.bib} % .bib extension is required here
