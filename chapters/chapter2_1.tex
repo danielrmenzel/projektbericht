@@ -1,0 +1,31 @@
+\chapter{Stand der Technik}
+Die Entwicklung einer neuen Messtechnik für das Fahrrad und den Flying Suit stellt eine komplexe Aufgabe da.
+Dies beinhaltet die Planung und Bestellung nötiger Materialien und die Anbringung dieser am jeweiligen Aufbau.
+Um sicherzustellen, dass die zu entwickelnde technische Umsetzung möglich ist, wurde das Zusammenspiel von Node und Dehnungsmessstreifen zunächst am einfacheren Aufbau eines Biegebalkens getestet.
+
+
+\section{Biegebalken (Menzel)}
+\subsection{Aufbau des Biegebalkens}
+Auf der Ober- und Unterseite des Biegebalkens sind Dehnungsmessstreifen angebracht um die beim aufbringen eines Gewichts entstehende Dehnung messen zu können.
+Dies wurde mit verschiedenen Gewichten und in verschiedenen Einheiten durchgeführt.
+\begin{figure}[h]
+    \begin{center}
+        \includegraphics[width=0.5\textwidth, keepaspectratio]{biegebalken_grafik.png}
+        \caption[Biegebalken Schema (Abbildungsverzeichnis)]{Biegebalken Schema
+        %\cite{VLInkManual}
+        }
+        \label{fig:biegebalkenschema}
+    \end{center}
+\end{figure}
+\subsection{Berechnung der Sensitivity}
+Um eine Messung am Biegebalken durchführen zu können wurde zunächst die Sensitivity mathematisch berechnet.
+Sie basierst auf der Geometrie des Biegebalkens, sowie des zu erwartendem maximalen Gewicht und wird als Parameter in SensorConnect eingegeben.
+Sie stellt den gemessenen Wert in mV/V bei Maximalbelastung dar.
+Aufgrund der einfachen Geometrie des Biegebalkens ist dies ein wichtiger Schritt, bevor diese für die komplexere Geometrie des Fahrradlenkers oder des Gestells des Flying Suits berechnet wird.
+
+In der folgenden Berechnung wird für den Parameter n der Wert 2 verwendet, da es sich um die Anzahl der angebrachten DMS und die daraus resultierende Brückenkonfiguration handelt.
+Der Parameter k ist durch die verwendeten DMS gegeben. Als maximale Last dient eine Hantelscheibe mit einem Gewicht von 2.609kg.
+
+\input{latex_math/biegebalken.tex}
+
+Mit der berechneten Sensitivity wurden mehrere Messungen durchgeführt.

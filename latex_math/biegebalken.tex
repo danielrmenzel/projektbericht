@@ -1,0 +1,56 @@
+
+
+Maße des Biegebalkens:
+\[
+l = 117 \text{ mm}, \quad b = 19.8 \text{ mm}, \quad h = 2.94 \text{ mm}
+\]
+Maximale Last:
+\[
+M = 2.609 \text{ kg}
+\]
+
+\subsection*{Berechnung des Widerstandsmoments}
+\[
+W_x = \frac{b h^2}{6}
+\]
+Einsetzen der Werte:
+\[
+W_x = \frac{19.8 \times 2.94^2}{6} = 28.52 \text{ mm}^3
+\]
+
+\subsection*{Berechnung des Biegemoments}
+\[
+M_b = F \times l
+\]
+\[
+M_b = 2.609 \times 9.81 \times 117mm = 2994.53 \text{ Nmm}
+\]
+
+\subsection*{Berechnung der Spannung}
+\[
+\sigma = \frac{M_b}{W_x}
+\]
+\[
+\sigma = \frac{2994.53}{28.52} = 104.99 \text{ N/mm}^2
+\]
+
+\subsection*{Berechnung der Dehnung}
+\[
+\varepsilon = \frac{\sigma}{E}
+\]
+Mit \(E = 210000 \text{ N/mm}^2\):
+\[
+\varepsilon = \frac{104.99}{210000} = 0.499\times 10^{-3}
+\]
+
+\subsection*{Berechnung der Brückenausgabe}
+\[
+\frac{U_M}{U_B} = \frac{n}{4} \times k \times \varepsilon
+\]
+Mit \( n = 2 \), \( k = 2.01 \):
+\[
+\frac{U_M}{U_B} = \frac{2}{4} \times 2.01 \times 0.499 \times 10^{-3}
+\]
+\[
+\frac{U_M}{U_B} = 0.000502 \text{ V/V} = 0.5 \text{ mV/V}
+\]
