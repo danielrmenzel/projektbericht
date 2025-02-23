@@ -17,6 +17,48 @@ Dies wurde mit verschiedenen Gewichten und in verschiedenen Einheiten durchgefü
         \label{fig:biegebalkenschema}
     \end{center}
 \end{figure}
+
+\subsection{Wahl des Messverfahrens}
+Um Messungen durchführen zu können bieten sich verschiedene Verfahren an.
+Die in der Software SensorConnect verfügbaren und für uns relevanten Verfahren sind die Shunt-, Field-, und Sensitivity(geometriebasierte)-kalibrierung.
+Die Beschreibung sowie die Vor- und Nachteile dieser Verfahren sind in \ref{tbl:verfahren} \nameref{tbl:verfahren} dargestellt.
+Um die theoretische Grundlage für den Aufbau des Fahrrads und des Flying Suits zu schaffen wurde sich beim Biegebalken für die Wahl des mV/V Messverfahrens entschieden.
+
+\bgroup
+\def\arraystretch{2}
+\begin{table}[h]
+\centering
+\begin{tabular}{|p{0.25\linewidth}|p{0.25\linewidth}|p{0.25\linewidth}|p{0.25\linewidth}|}
+\hline
+Verfahren & Beschreibung & Vorteil & Nachteil\\ \hline
+Shunt Kalibrierung & Interner (Shunt) Widerstand wird zur DMS-Brücke geschaltet. Es wird eine definierte Dehnung simuliert, um die Messkette zu überprüfen.
+& schnell, einfach & Simuliert keine echte mech. Belastung, nur elektrische Effekte
+\\ \hline
+Field Kalibrierung & Messung von realer mech. Belastung mit Referenzlast
+
+& Wenn Last bekannt ist, kann man sehr genau messen.
+& Definierte Belastung der Struktur notwendig
+
+\\ \hline
+Geometriebasierte Kalibrierung (mV/V)
+ & Berechnung für Software basierend auf Materialparametern und Geometrie
+
+
+& Ermöglicht eine Abschätzung und Vergleich zwischen erwarteten und gemessenen Werten
+
+& Abweichungen bei ungenauen Materialparametern möglich
+
+
+\\ \hline
+
+\end{tabular}
+\caption{Messverfahren}
+\label{tbl:verfahren}
+
+\end{table}
+\egroup
+
+
 \subsection{Berechnung der Sensitivity}
 Um eine Messung am Biegebalken durchführen zu können wurde zunächst die Sensitivity mathematisch berechnet.
 Sie basierst auf der Geometrie des Biegebalkens, sowie des zu erwartendem maximalen Gewicht und wird als Parameter in SensorConnect eingegeben.
