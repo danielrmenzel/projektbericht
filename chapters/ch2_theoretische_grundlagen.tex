@@ -1,7 +1,53 @@
-\chapter{Stand der Technik}
+\chapter{Theoretische Grundlagen}
 Die Entwicklung einer neuen Messtechnik für das Fahrrad und den Flying Suit stellt eine komplexe Aufgabe da.
 Dies beinhaltet die Planung und Bestellung nötiger Materialien und die Anbringung dieser am jeweiligen Aufbau.
 Um sicherzustellen, dass die zu entwickelnde technische Umsetzung möglich ist, wurde das Zusammenspiel von Node und Dehnungsmessstreifen zunächst am einfacheren Aufbau eines Biegebalkens getestet.
+
+
+
+\section{Drahtlose Sensornetzwerke und der V-Link 200}
+
+Dies soll durch die Verwendung des VLINK200 Nodes der Herstellers LORD/HBK stattfinden.
+Dieses Unternehmen bietet Lösungen für drahtlose Sensornetzwerke an. Diese werden in der Industrie und dem Internet of Things, sowie auch in der Forschung und im Maschinen und Anlagenbau verwendet.
+Dort wird sie vor allem im Bereich der predictive Maintenance eingesetzt.
+Der Node verfügt über 8 Eingänge, 4 ±156mV Differenzeingänge und 4 ± 156mV Single-Ended Eingänge.
+Er gewährleistet eine verlustfreie Datenübertragung sowie auch die Speicherung von Messdaten.
+Man kann den Node über interne, austauschbare Batterien und externe Akkus betreiben.
+
+\begin{figure}[h]
+    \begin{center}
+        \includegraphics[width=1\textwidth, keepaspectratio]{lord_wireless.png}
+        \caption[LORD drahtlose Übertragung (Abbildungsverzeichnis)]{LORD drahtlose Übertragung
+        \cite{VLInkManual}
+        }
+        \label{fig:lordwireless}
+    \end{center}
+\end{figure}
+
+Abbildung \ref{fig:lordwireless} zeigt die Funktionsweise der drahtlosen Datenübertragung.
+Ein an das Node angeschlossener Sensor wird inerhalb des Nodes verstärkt und digitalisiert.
+Anschließend werden die Messdaten vom Node drahtlos an eine Base Station gesendet welche mit einem Laptop verbunden ist.
+Dort kann durch die Software SensorConnect auf den Node zugegriffen werden und dessen Daten visualisiert oder weiter verarbeitet werden.
+
+
+Abbildung \ref{fig:lordproducts} zeigt einen Teil der Produktpalette.
+Als Gateway wurde von uns der dort gezeigte USB Stick genutzt.
+Insgesamt wurden uns zwei VLINK 200 Node, und ein USB Stick zur Verfügung gestellt was in der späten Projektphase teilweise zu Problemen führte,
+siehe \ref{sec:probleme} \nameref{sec:probleme}.
+
+\begin{figure}[h]
+    \begin{center}
+        \includegraphics[width=1\textwidth, keepaspectratio]{lord_products.png}
+        \caption[LORD Produkte (Abbildungsverzeichnis)]{LORD Produkte
+        \cite{VLInkManual}
+        }
+        \label{fig:lordproducts}
+    \end{center}
+\end{figure}
+
+\section{Dehnungsmessstreifen und Messprinzipien}
+
+
 
 
 \section{Biegebalken (Menzel)}
@@ -105,3 +151,7 @@ Gegeben & Gemessen & Abweichung \\ \hline
 
 \end{table}
 \egroup
+
+
+\section{Viertel\-, Halb\- und Vollbrückenschaltungen für DMS}
+\section{Mechanische Belastungen \(Biegung, Torsion, Kräfte\)}
