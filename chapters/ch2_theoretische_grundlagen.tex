@@ -1,8 +1,4 @@
 \chapter{Theoretische Grundlagen}
-Die Entwicklung einer neuen Messtechnik für das Fahrrad und den Flying Suit stellt eine komplexe Aufgabe da.
-Dies beinhaltet die Planung und Bestellung nötiger Materialien und die Anbringung dieser am jeweiligen Aufbau.
-Um sicherzustellen, dass die zu entwickelnde technische Umsetzung möglich ist, wurde das Zusammenspiel von Node und Dehnungsmessstreifen zunächst am einfacheren Aufbau eines Biegebalkens getestet.
-
 
 
 \section{Drahtlose Sensornetzwerke und der V-Link 200 \(Menzel\)}
@@ -25,7 +21,7 @@ Man kann den Node über interne, austauschbare Batterien und externe Akkus betre
 \end{figure}
 
 Abbildung \ref{fig:lordwireless} zeigt die Funktionsweise der drahtlosen Datenübertragung.
-Ein an das Node angeschlossener Sensor wird inerhalb des Nodes verstärkt und digitalisiert.
+Ein an das Node angeschlossener Sensor wird innerhalb des Nodes verstärkt und digitalisiert.
 Anschließend werden die Messdaten vom Node drahtlos an eine Base Station gesendet welche mit einem Laptop verbunden ist.
 Dort kann durch die Software SensorConnect auf den Node zugegriffen werden und dessen Daten visualisiert oder weiter verarbeitet werden.
 
@@ -45,12 +41,105 @@ siehe \ref{sec:probleme} \nameref{sec:probleme}.
     \end{center}
 \end{figure}
 
+
 \section{Dehnungsmessstreifen und Messprinzipien \(Bellgardt\)}
+Dehnungsmessstreifen (DMS) sind sensorische Elemente, die zur Messung von mechanischen Dehnungen in Bauteilen eingesetzt werden. Das Wirkprinzip beruht auf der Änderung des elektrischen Widerstands eines metallischen oder halbleitenden Messgitters, wenn es durch eine mechanische Belastung gedehnt oder gestaucht wird. Diese Widerstandsänderung ist direkt proportional zur mechanischen Dehnung des Materials, auf das der DMS aufgeklebt ist. 
+Das Messprinzip basiert auf dem Zusammenhang zwischen der mechanischen Dehnung und der Widerstandsänderung des DMS. Wird das Trägermaterial belastet, verändert sich seine Geometrie, wodurch sich auch die Länge und der Querschnitt des Messgitters ändern. Dies beschreibt die Gleichung des elektrischen Widerstands:
+
+$R = \rho \cdot \frac{l}{A}$,
+
+mit $\rho$ als spezifischem Widerstand, l als Länge und A als Querschnitt ergibt sich, dass eine Längenzunahme bei gleichzeitiger Verringerung des Querschnitts zu einer Erhöhung des Widerstands führt. Um diese Widerstandsänderung messbar zu machen, wird häufig eine Wheatstone-Brücke verwendet, die Spannungsänderungen proportional zur Dehnung des Materials erfasst.
+DMS finden breite Anwendung in der experimentellen Spannungsanalyse, der Kraftmessung und der Strukturüberwachung in verschiedenen Ingenieurbereichen. Durch ihre hohe Empfindlichkeit und Präzision sind sie essenzielle Sensoren zur mechanischen Zustandsüberwachung von Bauteilen und Maschinen.
+
+
+
+
+
+
+
+
+
+
+\newpage{}
+\section{Viertel\-, Halb\- und Vollbr\"uckenschaltungen für DMS \(Bellgardt\)}
+Zur präzisen Messung mechanischer Dehnungen werden Dehnungsmessstreifen häufig in Form einer Wheatstone-Brücke verschaltet. Dabei gibt es drei Hauptkonfigurationen: die Viertelbrücke, die Halbbrücke und die Vollbrücke, die sich in ihrer Empfindlichkeit, Temperaturkompensation und Messgenauigkeit unterscheiden.
+
+\subsection{Viertelbrückenschaltung}
+Die einfachste Form ist die Viertelbrückenschaltung (siehe Abbildung \ref{fig:fab1} links), bei der nur ein einzelner DMS als aktiver Widerstand in die Brückenschaltung integriert wird, während die anderen drei Widerstände passive Referenzwiderstände sind. Die Widerstandsänderung des DMS führt zu einer Veränderung der Brückenspannung, die als Messsignal ausgewertet wird. Da nur ein DMS aktiv zur Messung beiträgt, ist die Empfindlichkeit dieser Schaltung vergleichsweise gering. Zudem sind Temperaturkompensation und Störunterdrückung begrenzt, da äußere Einflüsse nicht ausreichend ausgeglichen werden. Die Viertelbrücke wird häufig in einfachen Spannungsmessungen eingesetzt, wenn nur geringe Genauigkeitsanforderungen bestehen.
+
+\subsection{Halbbrückenschaltung}
+Eine präzisere Alternative stellt die Halbbrückenschaltung  (siehe Abbildung \ref{fig:fab1} mittig) dar, bei der zwei DMS in die Brückenschaltung eingebaut sind. Diese werden oft so angeordnet, dass einer gedehnt und der andere gestaucht wird, wodurch sich ihre Widerstandsänderungen addieren und das Ausgangssignal verstärken. Dadurch erhöht sich die Messgenauigkeit im Vergleich zur Viertelbrücke. Gleichzeitig verbessert sich die Temperaturkompensation, da beide DMS denselben Umgebungseinflüssen ausgesetzt sind und sich temperaturbedingte Widerstandsänderungen teilweise gegenseitig aufheben. In diesem Projekt wurde hauptsächlich die Halbbrückenschaltung verwendet.
+
+\subsection{Vollbrückenschaltung}
+Die höchste Präzision und Empfindlichkeit bietet die Vollbrückenschaltung  (siehe Abbildung \ref{fig:fab1} rechts), bei der vier aktive DMS in die Wheatstone-Brücke integriert sind. Dabei befinden sich zwei DMS in einem gedehnten und zwei in einem gestauchten Zustand, wodurch sich ihre Widerstandsänderungen vollständig addieren und ein maximales Ausgangssignal erzeugt wird. Die Vollbrücke bietet nicht nur die beste Messgenauigkeit, sondern auch eine optimale Temperaturkompensation, da sich externe Temperatureinflüsse auf alle vier DMS gleichmäßig auswirken und somit weitgehend eliminiert werden.
+Ein Vergleich dieser Brückenkonfigurationen findet sich zusammengefasst in Tabelle \ref{tbl:dms_schaltungen}
+
+
+\bgroup
+\def\arraystretch{2}
+\begin{table}[h]
+\centering
+\begin{tabular}{|p{0.25\linewidth}|p{0.25\linewidth}|p{0.25\linewidth}|p{0.25\linewidth}|}
+\hline
+Schaltung & Anzahl aktiver DMS & Empfindlichkeit & Anwendung \\ \hline
+Viertelbrücke & 1 & Gering & Einfache Dehnungsmessung \\ \hline
+Halbbrücke & 2 & Mittel & Biegung, Torsion, Kraftmessung \\ \hline
+Vollbrücke & 4 & Hoch & Hochpräzise Messung, industrielle Sensorik \\ \hline
+\end{tabular}
+\caption{Vergleich verschiedener DMS-Schaltungen}
+\label{tbl:dms_schaltungen}
+\end{table}
+\egroup
+
+
+\begin{figure}[h]
+    \begin{center}
+        \includegraphics[width=1.0\textwidth, keepaspectratio]{fab1.png}
+        \caption[DMS in Viertel\- Halb\- und Vollbr\"uckenkonfiguration (Abbildungsverzeichnis)]{DMS in Viertel\- Halb\- und Vollbr\"uckenkonfiguration
+        \footcite{https://learnchannel-tv.com/wp-content/uploads/2020/12/Wheatstone-DMS-Messbrucke-Viertel-Halb-Vollbrucke-1024x423.png}
+        }
+        \label{fig:fab1}
+    \end{center}
+\end{figure}
+
+
+
+
+
+
+\section{Mechanische Belastungen \(Bellgardt, Menzel\)}
+Mechanische Belastungen entstehen, wenn äußere Kräfte oder Momente auf ein Bauteil einwirken und Spannungen sowie Verformungen im Material verursachen. Je nach Art der Beanspruchung unterscheidet man verschiedene Belastungsformen, die jeweils charakteristische Spannungs- und Dehnungszustände hervorrufen. Besonders relevant für die Dehnungsmessung sind Biegung, Torsion und axiale Kraftbeanspruchung, da sie mit Hilfe von Dehnungsmessstreifen (DMS) präzise erfasst werden können.
+
+\begin{figure}[h]
+    \begin{center}
+        \includegraphics[width=0.5\textwidth, keepaspectratio]{fab2.png}
+        \caption[Verschiedene Krafteinwirkungen (Abbildungsverzeichnis)]{Verschiedene Krafteinwirkungen
+        \footcite{https://www.maschinenbau-wissen.de/bilder/skripte/mechanik/belastungsarten-03.PNG}
+        }
+        \label{fig:fab2}
+    \end{center}
+\end{figure}
+\subsection{Biegung: Verformung durch einwirkende Kräfte}
+Bei einer Biegebelastung wird ein Bauteil durch äußere Kräfte oder Momente gekrümmt. Dies führt zu einer Biegespannung, die entlang des Querschnitts eine typische Spannungsverteilung erzeugt: Auf der einen Seite des Bauteils tritt eine Dehnung (Zugspannung) auf, während die gegenüberliegende Seite gestaucht wird (Druckspannung). Dazwischen liegt die neutrale Faser, eine Linie oder Fläche ohne Längenänderung.
+Zur Messung von Biegespannungen werden DMS typischerweise auf der Ober- und Unterseite des Bauteils angebracht. Eine Halbbrücken- oder Vollbrückenschaltung ist besonders vorteilhaft, da sie die Widerstandsänderungen der DMS kombiniert und sowohl die Empfindlichkeit als auch die Temperaturkompensation verbessert. Einsatzgebiete sind etwa: Bauwerksüberwachung, Maschinenbau und die Belastungsprüfung von Bauteilen.
+
+\subsection{Torsion: Drehmomente und Schubspannungen}
+Torsion tritt auf, wenn ein Bauteil um seine Längsachse verdreht wird, beispielsweise bei Antriebswellen oder Schraubverbindungen. Dabei entstehen Schubspannungen, die unter einem ±45°-Winkel zur Achse verlaufen.
+Zur Messung von Torsionsbeanspruchungen werden DMS in einer schrägen Anordnung (meist in ±45°-Orientierung) angebracht, sodass sie die maximalen Schubspannungen erfassen. Eine Halbbrücke mit zwei DMS oder eine Vollbrücke mit vier DMS ermöglicht eine genaue Bestimmung des aufgebrachten Drehmoments. Eine Messung der Torsion wird oft für die Überwachung von rotierenden Maschinen, Fahrzeugantrieben und industriellen Wellen genutzt.
+
+\subsection{Zug- und Druck}
+\todo{}
+
 
 
 
 
 \section{Biegebalken \(Menzel\)}
+Die Entwicklung einer neuen Messtechnik für das Fahrrad und den Flying Suit stellt eine komplexe Aufgabe da.
+Dies beinhaltet die Planung und Bestellung nötiger Materialien und die Anbringung dieser am jeweiligen Aufbau.
+Um sicherzustellen, dass die zu entwickelnde technische Umsetzung möglich ist, wurde das Zusammenspiel von Node und Dehnungsmessstreifen zunächst am einfacheren Aufbau eines Biegebalkens getestet.
+
+
 \subsection{Aufbau des Biegebalkens}
 Auf der Ober- und Unterseite des Biegebalkens sind Dehnungsmessstreifen angebracht um die beim aufbringen eines Gewichts entstehende Dehnung messen zu können.
 Dies wurde mit verschiedenen Gewichten und in verschiedenen Einheiten durchgeführt.
@@ -152,6 +241,3 @@ Gegeben & Gemessen & Abweichung \\ \hline
 \end{table}
 \egroup
 
-
-\section{Viertel\-, Halb\- und Vollbr\"uckenschaltungen für DMS \(Bellgardt\)}
-\section{Mechanische Belastungen (Biegung, Torsion, Kr\"afte) \(Bellgardt, Menzel\)}
