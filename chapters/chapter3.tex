@@ -8,7 +8,18 @@ In einer Messbox befindet sich die Messtechnik. Diese zeichnet über die Zeit da
 Auf jeder Lenkerseite gibt es jeweils zwei DMS welche als Halbbrücke geschalten sind und die Kräfte in horizontaler oder vertikaler Richtung messen. 
 Abbildungen \ref{fig:fab3} und \ref{fig:fab4} zeigen den alten Aufbau des Fahrrads.
 Um den alten Versuchsaufbau bei Bedarf wiederherstellen zu können musste dieser genau dokumentiert werden.
-Dies geschah durch das Beschriften der in der Lenkerbox befindlichen Kabel, siehe \todo{Anhang}
+Dies geschah durch das Beschriften der in der Lenkerbox befindlichen Kabel, siehe \ref{fig:fahrraddok}.
+\begin{figure}[h]
+    \begin{center}
+        \includegraphics[width=0.5\textwidth, keepaspectratio]{fahrraddok.jpeg}
+        \caption[Dokumentation des alten Aufbaus (Abbildungsverzeichnis)]{Dokumentation des alten Aufbaus
+        \cite{LearnChannel}
+        }
+        \label{fig:fahrraddok}
+    \end{center}
+\end{figure}
+
+
 
 
 An dem bisherigen Aufbau wurden folgende Optimierungsmöglichkeiten erkannt:
@@ -215,7 +226,7 @@ Die Signale werden innerhalb des Platinengehäuses verarbeitet, bevor sie an den
 Die alte Lenkerbox ist nicht spritzwassergeschützt, und die verwendeten Leitungen sind nicht geschirmt.
 Zudem gibt es keine Zugentlastung der Leitungen zur Messtechnik.
 Diese Punkte sollten bei der Auswahl und Umsetzung einer neuen Lenkerbox berücksichtigt werden.\
-Um ausreichend Platz zum verlöten der Platine und DMS zu haben wurde zunächst eine Box mit IPP6 Schutz und den Aussenmassen mit  122 x 120 x 55mm gewählt, siehe Abbildung \ref{fig:box1}.
+Um ausreichend Platz zum Verlöten der Platine und DMS zu haben wurde zunächst eine Box mit IPP6 Schutz und den Aussenmassen mit  122 x 120 x 55mm gewählt, siehe Abbildung \ref{fig:box1}.
 
 \begin{figure}[h]
     \begin{center}
@@ -227,7 +238,7 @@ Um ausreichend Platz zum verlöten der Platine und DMS zu haben wurde zunächst 
     \end{center}
 \end{figure}
 
-Da sich diese als für den gewünschten Einsatz zu groß dimensioniert herausstellt, sollte eine kleinere Box bestellt und verwendet werden, siehe Abbildung \ref{fig:dan1}.
+Da sich diese als für den gewünschten Einsatz zu groß dimensioniert herausstellte, sollte eine kleinere Box bestellt und verwendet werden, siehe Abbildung \ref{fig:dan1}.
 Die kleinere Box hat die Aussenmasse 120 x 80 x 55 mm. Die zu entwerfende Platine (siehe Kapitel \ref{sec:fahrradplatine}) sollte so dimensioniert sein, dass sie in dieser kleineren Box Platz findet, daher musste auch diese neu entworfen werden.
 
 \begin{figure}[h]
@@ -248,7 +259,7 @@ Zu Beginn sind wir davon ausgegangen, dass die DMS direkt mit der neuen Messtech
     \begin{center}
         \includegraphics[width=0.9\textwidth, keepaspectratio]{fab5.png}
         \caption[LORD Konfigurationen der Brücken (Abbildungsverzeichnis)]{LORD Konfigurationen der Brücken}
-        \footcite{VLInkManual
+        \cite{VLInkManual
         }
         
         \label{fig:fab5}
@@ -268,7 +279,7 @@ Da dies nicht möglich ist, haben wir als Lösung eine Zwischenplatine konstruie
     \end{center}
 \end{figure}
 
-Für die Messtechnik sieht dies nun aus wie eine Vollbrücke. Um uns das Wirkungsprinzip und die Funktionsfähigkeit zu verdeutlichen, wurde die Schaltung für den Biegebalken konstruiert.
+Für die Messtechnik wirkt dies nun wie eine Vollbrücke. Um uns das Wirkungsprinzip und die Funktionsfähigkeit zu verdeutlichen, wurde die Schaltung für den Biegebalken konstruiert.
 Der Mittelabgriff des Biegebalkens ist dabei die gelbe Ader. Die Versorgungsapannung von 4,096 V wird durch die Messtechnik vorgegeben und liegt zwischen den Kontakten SP+ und GND an. Der Brückenausgang wird zwischen S1- und S1+ gemessen. Hierüber wird die Belastung der Brücke durch Dehnung der DMS in eine Spannung zwischen S1- und S1+ dargestellt
 \subsubsection{Der erste Prototyp}
 Basierend auf dem ersten Schaltungsplan wurde dann eine Prototyp-Platine erstellt. Die Platine basiert auf einer Lochplatine.
@@ -285,12 +296,12 @@ Die verwendeten Widerstände sind 120 Ohm-Metallschichtwiderstände mit einer Ab
 \end{figure}
 
 
-
+\clearpage
 \subsubsection{Platinenplanung der Lenkerbox}
 Der alte Aufbau hat einige Eigenschaften, die durch den neuen Aufbau verbessert wurden. So wurde der alte Aufbau auf einer Lochplatine realisiert.
 Zudem wurde die Verbindung der Platine mit Schraubklemmen gelöst.
 
-\begin{figure}[h]
+\begin{figure}[htbp]
     \begin{center}
         \includegraphics[width=0.3\textwidth, keepaspectratio]{fab8.png}
         \caption[Alte Platine in der alten Lenkerbox (Abbildungsverzeichnis)]{Alte Platine in der alten Lenkerbox}
@@ -352,7 +363,7 @@ Basierend auf dem Schaltplan (siehe Anhang \ref{sec:schaltplan2}) wurde dann die
 
 \begin{figure}[htbp]
     \begin{center}
-        \includegraphics[width=0.5\textwidth, keepaspectratio]{fab13.png}
+        \includegraphics[width=0.75\textwidth, keepaspectratio]{fab13.png}
         \caption[Fertig installierte Lenkerplatine (Abbildungsverzeichnis)]{Fertig installierte Lenkerplatine}
         %\footcite{www.kicad.org}
         \label{fig:fab13}

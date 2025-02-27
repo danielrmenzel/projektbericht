@@ -1,10 +1,55 @@
 \chapter{Durchf\"uhrung der Messungen}
 
-\section{Vorbereitung und Kalibrierung}
-\subsection{Funktions\"uberpr\"ufung (L\"otstellen und Testboard) \(Bellgardt, Menzel\)}
+%\section{Vorbereitung und Kalibrierung}
+\subsection{Reichweitentest \(Grote\)}
+
+Da es sich bei unserem Projekt um eine drahtlose Software handelt, ist es wichtig, die Reichweite zu testen. Hierfür haben wir den Sensorknoten zusammen mit der Box, in welchem er für die Messungen am FlyingSuit gelegen hat, in einer freien Umgebung öhne Störfaktoren gemessen. Die Box wurde in verschiedenen Entfernungen zum Empfänger platziert und die Signalstärke, der Paketverlust und die Störfaktoren analysiert. Die beiden aussagekräftigsten Ergebnisse des Tests sind auf den nachfolgenden Bildern zu sehen.
+Bei einer Reichweite von 40 Metern zwischen Computer und Sensor ist schon ein Paketverlust von 1,4\% zu verzeichnen. Bei einer Entfernung von 50 Metern ist der Paketverlust auf 6,7\% gestiegen. Dies ist gegenüber dem Herstellerversprechen ein schlechtes Ergebnis, aber für unsere Anwendung ausreichend. Sollte der Sensor in späteren Anwendungen weiter vom Empfänger entfernt sein, kann der interne Speicher für die Durchführung des Versuchs benutzt werden.
+
+\begin{figure}[h]
+    \begin{center}
+        \includegraphics[width=1\textwidth, keepaspectratio]{40m.png}
+        \caption[Reichweitentest 40 Meter]{40 Meter
+        }
+        \label{fig:40m}
+    \end{center}
+\end{figure}
+
+\begin{figure}[h]
+    \begin{center}
+        \includegraphics[width=1\textwidth, keepaspectratio]{50m.png}
+        \caption[Reichweitentest 50 Meter]{50 Meter
+        }
+        \label{fig:50m}
+    \end{center}
+\end{figure}
 
 
-\subsection{Externe Shunt Kalibrierung (graues Ger\"at und Rechnung) \(Nerb, Ulit\)}
+\section{Funktions\"uberpr\"ufung (L\"otstellen und Testboard Fahrrad) \(Bellgardt, Menzel\)}
+Der abschließende Funktionstest hat gezeigt, dass das Wirkprinzip einer Halbbrücke funktioniert. Es besteht jedoch ein Problem mit der Kalibrierung.
+Es wurde mit der geometriebasierten Kalibrierung eine Abweichung im Faktor 10 festgestellt.
+Eine Kalibrierung mit der in der Software angebotenen Field Calibration wurde durch Frau Gosh bereits begonnen und liefert hingegen sinnvolle Werte.
+Um den Fehler einzugrenzen wurden daraufhin folgende Funktionstests durchgeführt:
+
+
+\begin{enumerate}
+    \item \textbf{Wirkprinzip der Halbbrücke:} Nachdem die Platine in der neuen Lenkerbox verlötet wurde, wurde getestet, ob das Wirkprinzip funktioniert. Hierzu wurde mit der berechneten Konfiguration der Lenker in der Horizontalen und der Waagerechten belastet. Es wurde festgestellt, dass alle vier Halbbrücken funktionsfähig sind und mit steigender Belastung auch gleichmäßig der Ausschlag der Messkurve steigt. Diese ist jedoch noch nicht kalibriert.
+    
+    \item \textbf{Geometriebasierte Berechnung:} Es wurde eine geometriebasierte Berechnung durchgeführt, um die Parameter für die mV/V Kalibrierung zu bestimmen, siehe \ref{sec:lenkerberechnung}.
+    
+    \item \textbf{Durchgangsprüfung der Leitungen:} Alle Leitungen wurden vor der Installation einer Durchgangsprüfung unterzogen, um Kurzschlüsse auf dem Leitungsweg auszuschließen.
+    
+    \item \textbf{Platine auf Kurzschluss getestet:} Die Lenkerplatine wurde mehrfach negativ auf Kurzschlüsse oder fehlerhafte Kontaktierung geprüft. Die Messung wurde mit einem Multimeter durchgeführt. Bei den getesteten Kontakten wurde immer ein OL (Over Limit) gemessen. Dies bestätigt, dass kein ungewollter Kontakt auf der Platine stattfindet.
+    
+    \item \textbf{Anbringung der DMS geprüft:} Testweise wurde die erste Halbbrücke abgelötet, um zu testen, ob der Mittelabgriff der DMS richtig bestimmt wurde. Der Mittelabgriff wurde richtig bestimmt und anschließend wieder verlötet.
+    
+    \item \textbf{Widerstandsprüfung der Platine von außen:} Um Fehler auf dem gesamten Leitungsweg auszuschließen, wurde eine Widerstandsprüfung von außen an den Kabeln durchgeführt. Hier konnte die gewünschte Schaltung bestätigt werden. Die gemessenen Widerstände befinden sich an gewünschter Stelle.
+\end{enumerate}
+
+
+
+
+%\subsection{Externe Shunt Kalibrierung (graues Ger\"at und Rechnung) \(Nerb, Ulit\)}
 %\subsection{Geometrische Kalibrierung (Biegebalken und Rechnung) (UN)}
 
 \section{Messungen am Fahrradlenker \(Bellgardt, Menzel\)}
@@ -21,13 +66,185 @@ Um die verschiedenen Arten der Belastung des Fahrradlenkers zu Messen wurde das 
     \end{center}
 \end{figure}
 
-\subsection{Durchf\"uhrung Messung (Kraft, Konzept, Vertikal/Horizontal)}
+\subsection{Durchf\"uhrung Messung (Kraft, Vertikal/Horizontal)}
+\subsubsection{Field Kalibrierung}
+Die Field Kalibrierung verspricht eine genaue Messung mit dem aktuellen Aufbau. Leider konnten wir Diese Kalibrierung nicht weiterverfolgen, da wir die Anweisung erhalten haben, uns auf die mV/V Kalibrierung zu beschränken. 
+Die folgenden Werte wurden von Frau Ghosh aufgenommen und stellen die Field Calibration von Channel 1 und Channel 2 dar. Die Werte wurden aufbereitet und hier aufgeführt, um als Grundlage für weitere Versuche zu dienen. 
+
+\textbf{Kalibrierung – Manuelle Methode (Nur CH1)}
+\textbf{Berechnete Werte:}
+\begin{align*}
+\text{Range} &= \pm 9.76 \text{ mV} \\
+\text{Steigung (slope)} &= 0.00689 \\
+\text{Offset} &= -880.911
+\end{align*}
+
+\clearpage
+\textbf{Gegeben vs. Gemessen – CH1}
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+\textbf{Gegeben (kg)} & \textbf{Gemessen (bits)} \\
+\hline
+0 kg & 128080 bits \\
+20.6 kg & 130460 bits \\
+31.4 kg & 131970 bits \\
+43 kg & 133890 bits \\
+50 kg & 134850 bits \\
+60.5 kg & 136730 bits \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{Ergebnisse – CH1 Umrechnung}
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+\textbf{Gegeben (kg)} & \textbf{Berechnet (kg)} \\
+\hline
+15.3 kg & 12 kg \\
+24.0 kg & 21 kg \\
+33.2 kg & 29.5 kg \\
+37.2 kg & 32.9 kg \\
+\hline
+\end{tabular}
+\end{center}
+\textbf{Fazit: System funktioniert!}
+
+\textbf{Kalibrierung – CH1 und CH2}
+\textbf{Berechnete Werte:}
+\begin{align*}
+\text{Range} &= \pm 9.76 \text{ mV} \\
+\text{Steigung (CH1)} &= 0.07237, \quad \text{Offset (CH1)} = -9262.685 \\
+\text{Steigung (CH2)} &= 0.08033, \quad \text{Offset (CH2)} = -10381.899
+\end{align*}
+
+\clearpage
+\textbf{Gegeben vs. Gemessen – CH1}
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+\textbf{Gegeben (N)} & \textbf{Gemessen (bits)} \\
+\hline
+0 N & 128280 bits \\
+100 N & 129350 bits \\
+201 N & 130540 bits \\
+296 N & 131840 bits \\
+402 N & 133520 bits \\
+500 N & 135120 bits \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{Gegeben vs. Gemessen – CH2}
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+\textbf{Gegeben (N)} & \textbf{Gemessen (bits)} \\
+\hline
+0 N & 128420 bits \\
+98 N & 129370 bits \\
+200 N & 130580 bits \\
+296 N & 131850 bits \\
+400 N & 133270 bits \\
+496 N & 134470 bits \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{Berechnete Werte für CH1}
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+\textbf{Gegeben (N)} & \textbf{Berechnet (N)} \\
+\hline
+205 N & 180.5 N \\
+309 N & 285.6 N \\
+394 N & 367.5 N \\
+499 N & 499.4 N \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{Berechnete Werte für CH2}
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+\textbf{Gegeben (N)} & \textbf{Berechnet (N)} \\
+\hline
+202 N & 196.8 N \\
+303 N & 312.4 N \\
+394 N & 386.9 N \\
+498 N & 540.6 N \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{Abweichung:} $<10\%$
+
+\subsubsection{Geometriebasierte Messung}
+\label{sec:lenkerberechnung}
+Mit folgender Berechnung wurden die Werte Sensitivity, max Capacity und Range berechnet um in SensorConnect eine geometriebasierte mV/V Messung durchzuführen.
+
+\textbf{Gegebene Maße}
+\begin{align*}
+D_a &= 31.7 \text{ mm}  \\
+D_i &= 27.8 \text{ mm}  \\
+L &= 240 \text{ mm}  \\
+\text{Maximale Last} &= 600 \text{ N}
+\end{align*}
+
+\textbf{Widerstandsmoment}
+\begin{align*}
+W_x &= \frac{\pi}{32} \cdot \frac{D_a^4 - D_i^4}{D_a} \\
+    &= \frac{\pi}{32} \cdot \frac{31.7^4 - 27.8^4}{31.7} \\
+    &= \frac{\pi}{32} \times 406.66 \\
+    &= 1276.93 \text{ mm}^3
+\end{align*}
+
+\textbf{Biegespannung}
+\begin{align*}
+\sigma &= \frac{F \cdot L}{W_x} \\
+       &= \frac{600 \cdot 240}{1276.93} \\
+       &= 112.77 \text{ N/mm}^2
+\end{align*}
+
+\textbf{Dehnung}
+\begin{align*}
+\varepsilon &= \frac{\sigma}{E} \\
+            &= \frac{112.77}{70000} \\
+            &= 1.61 \times 10^{-3}
+\end{align*}
+
+\textbf{Messbrückenspannung}
+\begin{align*}
+\frac{U_M}{U_B} &= \frac{n}{4} \cdot k \cdot \varepsilon \\
+                &= \frac{2}{4} \times 2.1 \times 1.61 \times 10^{-3} \\
+                &= 1.69 \text{ mV/V}
+\end{align*}
+
+\textbf {Brückenspannung}
+\begin{align*}
+U_B &= 4.096 \text{ V} \\
+\text{Range} &= \pm 6.92 \text{ mV/V}
+\end{align*}
+
+
+Mit dieser auf Geometrie basierenden Messung enstand eine Abweichung der gemessenen Werte um den Faktor 10.
+Um herauszufinden, woran dies liegt haben wir unsere Konfiguration der DMS,
+unsere Platine und Kabel an den alten Versuchsaufbau angeschlossen. Damit wollten wir feststellen, ob das Problem auch dort besteht, siehe Kapitel \ref{sec:altetechnik}.
+
+
+
+
+\subsubsection{Messung mit alter Messtechnik}
+\label{sec:altetechnik}
 
 Gegen Ende des Projekts lag unser Schwerpunkt darauf, den Grund für den Faktor-10-Fehler zu identifizieren.
-Bei diesem Fehler handelt es sich um eine Abweichung, welche beim geometriebasierten Messverfahren auftrifft.
+Bei diesem Fehler handelt es sich um eine Abweichung, welche beim geometriebasierten Messverfahren auftritt.
 Die Field-Calibration funktionierte einwandfrei, da sie jedoch als Kunstfehler angesehen werden kann sollten wir diese nicht verwenden.
 Um diesen Fehler auf die neue Fahrradschaltung eingrenzen zu können, haben wir den Auftrag erhalten, den neuen Aufbau mit der alten Messtechnik zu testen.
-Dabei haben wir die Hardware gemäß der WPM-Anleitung angeschlossen. Der einzige Unterschied bestand darin, dass wir bewusst keine Kalibrierung der alten Messtechnik durchgeführt haben.
+Dabei haben wir die Hardware gemäß der WPM-Anleitung angeschlossen. Der einzige Unterschied bestand darin, dass wir keine Kalibrierung der alten Messtechnik durchgeführt haben, da diese Werte bereits in der Software gespeichert waren.
 Die Annahme war, dass sich der Fehler auf die Messtechnik oder die Platine eingrenzen lässt, wenn die alte Messtechnik mit der alten Konfiguration,
 mit der neuen Platine verwendet wird.
 Beim Fahrradaufbau haben wir den Lenker zunächst in vertikaler und anschließend in horizontaler Richtung jeweils mit 600 N gegen das Gestell belastet.
@@ -155,7 +372,7 @@ Man beachte, dass das Bild nicht die realen Verhältnisse zeigt, entscheiden sin
 \clearpage
 \subsubsection{Testaufbau}
 Auch wenn es langfristig das Ziel ist, Messungen bei realen Testflügen durchzuführen und die Messtechnik eben dafür ausgelegt wurde,
-ist es zunächst wichtig anfängliche Kalibreirungen und Tests, in einer definierten Umgebung abzuhalten.
+ist es zunächst wichtig anfängliche Kalibrierungen und Tests, in einer definierten Umgebung abzuhalten.
 In der Werkstatt von LandurisStudios besteht die Möglichkeit einen selbstentwickelten Teststand zu benutzen.
 Dieser ermöglicht theoretisch Lasten bis zum Materialversagen zu simulieren und eignet sich besonders für statische Versuche.
 Explorative dynamische Test können in sehr begrenztem Umfang ebenfalls erprobt werden.   Wie der Abbildung zu entnehmen, werden die Triebwerke durch Holzplatten ersetzt,
@@ -225,7 +442,7 @@ Der Aufbau ist dabei „Pfeilförmig“ mit zwei 45° Komponenten, da so die max
 Es ist anzumerken, dass aufgrund einer Fehlannahme, der DMS zu weit am Rand platziert wurde.
 Um die Schubdehnungen/-spannungen ideal erfassen zu können, ist dieser ebenfalls zentral und horizontal, im Querschnitt, aufzukleben.
 In der Abbildung wurde dies grün markiert. Die Grundsätzliche Montage erfolgt analog den Biegungs- DMS, jedoch ist bei der Verschaltung zu beachten,
-dass nun lediglich drei statt vier Kabel vom DMS wegführen. Diese sind gemäß \ref{ch:systemaufbau} 3 zu einer sinnvollen Brückenschaltung zu verbinden.  
+dass nun lediglich drei statt vier Kabel vom DMS wegführen. Diese sind gemäß Kapitel \ref{ch:systemaufbau} zu einer sinnvollen Brückenschaltung zu verbinden.  
 
 \begin{figure}[htbp]
     \centering
@@ -396,7 +613,7 @@ U_B = U_{\text{Ext}} \cdot 0,0762\,\text{mV/V} = 0,312\,\text{V}
 
 
 
-\section{Durchführung der Tests}
+\section{Durchführung der Tests am Flying Suit \(Nerb, Ulit\)}
 \subsection{Kraftaufnehmer}
 Zu Beginn des Tests sind die beiden Kraftaufnehmer entsprechend ihren Herstellerangaben in der Software zu Kalibrieren.
 Bei 200kg maximal zulässiger Last besitzen diese eine Sensitivität von 1.4mV/V.
