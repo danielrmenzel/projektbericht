@@ -7,6 +7,29 @@
 \subsection{Externe Shunt Kalibrierung (graues Ger\"at und Rechnung) \(Nerb, Ulit\)}
 %\subsection{Geometrische Kalibrierung (Biegebalken und Rechnung) (UN)}
 
+\subsection{Reichweitentest \(Grote\)}
+
+Da es sich bei unserem Projekt um eine drahtlose Software handelt, ist es wichtig, die Reichweite zu testen. Hierfür haben wir den Sensorknoten zusammen mit der Box, in welchem er für die Messungen am FlyingSuit gelegen hat, in einer freien Umgebung öhne Störfaktoren gemessen. Die Box wurde in verschiedenen Entfernungen zum Empfänger platziert und die Signalstärke, der Paketverlust und die Störfaktoren analysiert. Die beiden aussagekräftigsten Ergebnisse des Tests sind auf den nachfolgenden Bildern zu sehen.
+Bei einer Reichweite von 40 Mtern zwischen Computer und Sensor ist schon ein Paketverlust von 1,4\% zu verzeichnen. Bei einer Entfernung von 50 Metern ist der Paketverlust auf 6,7\% gestiegen. Dies ist gegenüber dem Herstellerversprechen ein schlechtes Ergebnis, aber für unsere Anwendung ausreichend. Sollte der Sensor in späteren Anwendungen weiter vom Empfänger entfernt sein, kann der interne Speicher für die Durchführung des Versuchs benutzt werden.
+
+\begin{figure}[h]
+    \begin{center}
+        \includegraphics[width=1\textwidth, keepaspectratio]{40m.png}
+        \caption[Reichweitentest 40 Meter]{40 Meter
+        }
+        \label{fig:40m}
+    \end{center}
+\end{figure}
+
+\begin{figure}[h]
+    \begin{center}
+        \includegraphics[width=1\textwidth, keepaspectratio]{50m.png}
+        \caption[Reichweitentest 50 Meter]{50 Meter
+        }
+        \label{fig:50m}
+    \end{center}
+\end{figure}
+
 \section{Messungen am Fahrradlenker \(Bellgardt, Menzel\)}
 \subsection{Aufbau Testvorrichtung}
 Um die verschiedenen Arten der Belastung des Fahrradlenkers zu Messen wurde das Fahrrad in die Vorrichtung des WPM's eingespannt, siehe Abbildung \ref{fig:rad}.
