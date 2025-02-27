@@ -9,7 +9,51 @@
 
 \section{Messungen am Fahrradlenker \(Bellgardt, Menzel\)}
 \subsection{Aufbau Testvorrichtung}
+Um die verschiedenen Arten der Belastung des Fahrradlenkers zu Messen wurde das Fahrrad in die Vorrichtung des WPM's eingespannt, siehe Abbildung \ref{fig:rad}.
+\begin{figure}[htbp]
+    \begin{center}
+        \includegraphics[width=0.75\textwidth, keepaspectratio]{rad.jpg}
+        \caption[Einspannen des Fahrrads (Abbildungsverzeichnis)]{Einspannen des Fahrrads}
+        %\footcite{Rechter Teil des Bildes: Praktikum Schwingbruchgefaehrdete Bauteile sicher dimensionieren und betreiben
+        %}
+        
+        \label{fig:rad}
+    \end{center}
+\end{figure}
+
 \subsection{Durchf\"uhrung Messung (Kraft, Konzept, Vertikal/Horizontal)}
+
+Gegen Ende des Projekts lag unser Schwerpunkt darauf, den Grund für den Faktor-10-Fehler zu identifizieren.
+Bei diesem Fehler handelt es sich um eine Abweichung, welche beim geometriebasierten Messverfahren auftrifft.
+Die Field-Calibration funktionierte einwandfrei, da sie jedoch als Kunstfehler angesehen werden kann sollten wir diese nicht verwenden.
+Um diesen Fehler auf die neue Fahrradschaltung eingrenzen zu können, haben wir den Auftrag erhalten, den neuen Aufbau mit der alten Messtechnik zu testen.
+Dabei haben wir die Hardware gemäß der WPM-Anleitung angeschlossen. Der einzige Unterschied bestand darin, dass wir bewusst keine Kalibrierung der alten Messtechnik durchgeführt haben.
+Die Annahme war, dass sich der Fehler auf die Messtechnik oder die Platine eingrenzen lässt, wenn die alte Messtechnik mit der alten Konfiguration,
+mit der neuen Platine verwendet wird.
+Beim Fahrradaufbau haben wir den Lenker zunächst in vertikaler und anschließend in horizontaler Richtung jeweils mit 600 N gegen das Gestell belastet.
+Da die Belastung manuell eingestellt wurde, trat eine kleine Abweichung auf. Die von der alten Messtechnik erfassten Werte wurden anschließend dokumentiert.
+Auch mit der alten Messtechnik konnte eine Abweichung zwischen Belastung und Messung um etwa den Faktor 10 festgestellt werden.
+Dies deutet auf einen Fehler in der neuen Platine hin.
+
+Es erfolgte eine Belastung mit etwa 600 N:
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|p{0.25\linewidth}|p{0.25\linewidth}|p{0.25\linewidth}|}
+    \hline
+    \textbf{DMS-Paar} & \textbf{Belastung (Newton)} & \textbf{Gemessener Betrag (Newton)} \\ \hline
+    Paar 1 & 598 & 63.6 \\ \hline
+    Paar 2 & 603 & 62.1 \\ \hline
+    Paar 3 & 597 & 59.6 \\ \hline
+    Paar 4 & 602 & 64.4 \\ \hline
+    \end{tabular}
+    \caption{Messwerte der DMS-Paare unter Belastung}
+    \label{tbl:dms_messwerte}
+\end{table}
+
+
+
+
 
 \clearpage
 \section{Messungen am Flying Suit (Fluggestell) \(Nerb, Ulit\)}
