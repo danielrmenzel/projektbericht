@@ -3,12 +3,10 @@
 
 \section{Drahtlose Sensornetzwerke und der V-Link 200 \(Menzel\)}
 
-Dies soll durch die Verwendung des VLINK200 Nodes der Herstellers LORD/HBK stattfinden.
-Dieses Unternehmen bietet Lösungen für drahtlose Sensornetzwerke an. Diese werden in der Industrie und dem Internet of Things, sowie auch in der Forschung und im Maschinen und Anlagenbau verwendet.
-Dort wird sie vor allem im Bereich der predictive Maintenance eingesetzt.
-Der Node verfügt über 8 Eingänge, 4 ±156mV Differenzeingänge und 4 ± 156mV Single-Ended Eingänge.
-Er gewährleistet eine verlustfreie Datenübertragung sowie auch die Speicherung von Messdaten.
-Man kann den Node über interne, austauschbare Batterien und externe Akkus betreiben.
+Dies soll durch die Verwendung des V-Link 200 Nodes des Herstellers LORD/HBK erfolgen.
+Dieses Unternehmen bietet Lösungen für drahtlose Sensornetzwerke an. Diese werden in der
+Industrie und im Internet of Things sowie in der Forschung und im Maschinen- und Anlagenbau verwendet. Dort kommen sie vor allem im Bereich der Predictive Maintenance zum Einsatz.
+Der Node verfügt über acht Eingänge: vier ±156 mV Differenzeingänge und vier ±156 mV Single-Ended-Eingänge. Er gewährleistet eine verlustfreie Datenübertragung sowie die Speicherung von Messdaten. Der Node kann sowohl über interne, austauschbare Batterien als auch über externe Akkus betrieben werden.
 
 \begin{figure}[h]
     \begin{center}
@@ -21,9 +19,9 @@ Man kann den Node über interne, austauschbare Batterien und externe Akkus betre
 \end{figure}
 
 Abbildung \ref{fig:lordwireless} zeigt die Funktionsweise der drahtlosen Datenübertragung.
-Ein an das Node angeschlossener Sensor wird innerhalb des Nodes verstärkt und digitalisiert.
+Ein an den Node angeschlossener Sensor wird innerhalb des Nodes verstärkt und digitalisiert.
 Anschließend werden die Messdaten vom Node drahtlos an eine Base Station gesendet welche mit einem Laptop verbunden ist.
-Dort kann durch die Software SensorConnect auf den Node zugegriffen werden und dessen Daten visualisiert oder weiter verarbeitet werden.
+Dort kann über die Software SensorConnect auf den Node zugegriffen werden und dessen Daten visualisiert oder weiterverarbeitet werden.
 
 
 Abbildung \ref{fig:lordproducts} zeigt einen Teil der Produktpalette.
@@ -63,7 +61,6 @@ DMS finden breite Anwendung in der experimentellen Spannungsanalyse, der Kraftme
 \newpage{}
 \section{Viertel\-, Halb\- und Vollbr\"uckenschaltungen für DMS \(Bellgardt\)}
 Zur präzisen Messung mechanischer Dehnungen werden Dehnungsmessstreifen häufig in Form einer Wheatstone-Brücke verschaltet. Dabei gibt es drei Hauptkonfigurationen: die Viertelbrücke, die Halbbrücke und die Vollbrücke, die sich in ihrer Empfindlichkeit, Temperaturkompensation und Messgenauigkeit unterscheiden.
-
 \subsection{Viertelbrückenschaltung}
 Die einfachste Form ist die Viertelbrückenschaltung (siehe Abbildung \ref{fig:fab1} links), bei der nur ein einzelner DMS als aktiver Widerstand in die Brückenschaltung integriert wird, während die anderen drei Widerstände passive Referenzwiderstände sind. Die Widerstandsänderung des DMS führt zu einer Veränderung der Brückenspannung, die als Messsignal ausgewertet wird. Da nur ein DMS aktiv zur Messung beiträgt, ist die Empfindlichkeit dieser Schaltung vergleichsweise gering. Zudem sind Temperaturkompensation und Störunterdrückung begrenzt, da äußere Einflüsse nicht ausreichend ausgeglichen werden. Die Viertelbrücke wird häufig in einfachen Spannungsmessungen eingesetzt, wenn nur geringe Genauigkeitsanforderungen bestehen.
 
@@ -72,7 +69,7 @@ Eine präzisere Alternative stellt die Halbbrückenschaltung  (siehe Abbildung \
 
 \subsection{Vollbrückenschaltung}
 Die höchste Präzision und Empfindlichkeit bietet die Vollbrückenschaltung  (siehe Abbildung \ref{fig:fab1} rechts), bei der vier aktive DMS in die Wheatstone-Brücke integriert sind. Dabei befinden sich zwei DMS in einem gedehnten und zwei in einem gestauchten Zustand, wodurch sich ihre Widerstandsänderungen vollständig addieren und ein maximales Ausgangssignal erzeugt wird. Die Vollbrücke bietet nicht nur die beste Messgenauigkeit, sondern auch eine optimale Temperaturkompensation, da sich externe Temperatureinflüsse auf alle vier DMS gleichmäßig auswirken und somit weitgehend eliminiert werden.
-Ein Vergleich dieser Brückenkonfigurationen findet sich zusammengefasst in Tabelle \ref{tbl:dms_schaltungen}
+Ein Vergleich dieser Brückenkonfigurationen findet sich zusammengefasst in Tabelle \ref{tbl:dms_schaltungen}.
 
 
 \bgroup
@@ -128,7 +125,8 @@ Torsion tritt auf, wenn ein Bauteil um seine Längsachse verdreht wird, beispiel
 Zur Messung von Torsionsbeanspruchungen werden DMS in einer schrägen Anordnung (meist in ±45°-Orientierung) angebracht, sodass sie die maximalen Schubspannungen erfassen. Eine Halbbrücke mit zwei DMS oder eine Vollbrücke mit vier DMS ermöglicht eine genaue Bestimmung des aufgebrachten Drehmoments. Eine Messung der Torsion wird oft für die Überwachung von rotierenden Maschinen, Fahrzeugantrieben und industriellen Wellen genutzt.
 
 \subsection{Zug- und Druck}
-\todo{}
+Druck- und Zugkräfte treten auf, wenn äußere Kräfte entlang einer Achse auf ein Bauteil wirken und eine Längenänderung verursachen. Bei einer Zugbelastung wird das Bauteil gedehnt, während es bei einer Druckbelastung gestaucht wird. Diese mechanischen Dehnungen oder Stauchungen erzeugen Spannungen im Material, die mithilfe von Dehnungsmessstreifen (DMS) erfasst werden können.
+Dies kann mit einem Kraftmesser gemessen werden.
 
 
 
