@@ -1,6 +1,7 @@
 \chapter{Systemaufbau und Umsetzung}
 
 \section{Technikstand Fahrrad \(Bellgardt, Menzel\)}
+\label{sec:technikstandfahrrad}
 Der Fahrradaufbau dient zur Erfassung von Kräften am Fahrradlenker, indem mechanische Größen in elektrische Signale umgewandelt werden. Dazu werden Dehnungsmessstreifen (DMS) verwendet, die auf relevante Bauteile aufgeklebt werden, um dort auftretende Verformungen zu erfassen. In einer Messbox befindet sich die Messtechnik. Diese zeichnet über die Zeit dann die Belastung auf. Insgesamt befinden sich an dem Lenker 8 DMS. Auf jeder Lenkerseite gibt es jeweils zwei DMS welche als Halbbrücke geschaltet, die Kräfte in horizontaler oder vertikaler Richtung messen. 
 Abbildungen \ref{fig:fab3} und \ref{fig:fab4} zeigen den alter Aufbau des Fahrrads.
 Um den alten Versuchsaufbau bei Bedarf wieder herstellen zu können musste dieser genau dokumentiert werden.
@@ -107,11 +108,11 @@ Die alte Lenkerbox besitzt zudem keine Zugentlastung der Leitungen der DMS Strei
         %\footcite{VLInkManual
         %}
         
-        \label{fig:fab8}
+       \label{fig:fab8}
     \end{center}
 \end{figure}
 
-Viele der angemerkten Punkte konnten verbessert werden. Hierzu wurde zunächst der Schaltplan in der Software KiCad\footcite{www.kicad.org} eingepflegt.
+Viele der angemerkten Punkte konnten verbessert werden. Hierzu wurde zunächst der Schaltplan in der Software KiCad\cite{KiCadWebsite} eingepflegt.
 \todo{fabian reihenfolge erklaerung kicad sinnvoll}
 
 KiCAD ist ein freies Tool, mit welchem man Platinen planen kann. Nach dem erfolgreichen Test der Prototyp Platine an dem Biegbalken wurde die Schaltung hochskaliert. Der Hauptunterschied im Anschluss der DMS des Biegebalkens und denen des Fahrrads besteht darin, dass der Mittelabgriff am Fahrrad durch die weißen DMS bereitgestellt wird.
@@ -127,12 +128,12 @@ KiCAD ist ein freies Tool, mit welchem man Platinen planen kann. Nach dem erfolg
 \end{figure}
 
 \subsubsection{Planung der Schaltung mit KiCAD}
-In der Software KiCAD\footcite{www.kicad.org} wurde zunächst ein Schaltplan erstellt, siehe \ref{fig:fab11}.
+In der Software KiCAD\cite{KiCadWebsite} wurde zunächst ein Schaltplan erstellt, siehe \ref{fig:fab11}.
 \begin{figure}[h]
     \begin{center}
         \includegraphics[width=0.2\textwidth, keepaspectratio]{fab10.png}
         \caption[KiCad Software Logo (Abbildungsverzeichnis)]{KiCad Software Logo}
-        \footcite{www.kicad.org}
+        \cite{KiCadWebsite}
         \label{fig:fab10}
     \end{center}
 \end{figure}
@@ -140,7 +141,7 @@ In der Software KiCAD\footcite{www.kicad.org} wurde zunächst ein Schaltplan ers
 
 Dieser stellt 4 Halbbrücken dar.
 Auf der Platine werden pro Halbbrücke je zwei Widerstände angebracht. Die befinden sich in Form ihrer Kontakte auf der Platine.
-Basierend auf dem Schaltplan (siehe Anhang: )\todo{Daniel: Verweis zur Schaltplan PDF in Anhang packen} wurde dann die Platine zunächst entsprechend Ihrer Abmessungen für das Gehäuse simuliert (siehe \ref{fig:fab12}) und anschließend gedruckt. Die fertige Platine ist in der Abbildung \ref{fig:fab13}zu sehen. Sie besitzt die Maße des Gehäuses. Zudem verfügt die Platine über 4 zusätzliche Bohrungen, um sie besser im Gehäuse befestigen zu können. 
+Basierend auf dem Schaltplan (siehe Anhang \ref{sec:schaltplan2}) wurde dann die Platine zunächst entsprechend Ihrer Abmessungen für das Gehäuse simuliert (siehe \ref{fig:fab12}) und anschließend gedruckt. Die fertige Platine ist in der Abbildung \ref{fig:fab13}zu sehen. Sie besitzt die Maße des Gehäuses. Zudem verfügt die Platine über 4 zusätzliche Bohrungen, um sie besser im Gehäuse befestigen zu können. 
 \begin{figure}[h]
     \begin{center}
         \includegraphics[width=0.4\textwidth, keepaspectratio]{fab11.png}
